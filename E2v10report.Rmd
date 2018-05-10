@@ -1,0 +1,40 @@
+---
+title: "Examination of HPV16 E2 in immoralized NOKs and TCGA HNSC"
+author: "Tara Nulton"
+date: "May 7, 2018"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Methods to analyze the data for TCGA, E2 and full genome RNA-seq data was generated and analysed from methods previously published (Evans, 2017).  
+
+To generate lists of significantly differentially expressed genes, the following strategy was employed:  
+
+For E2 and full genome clones, genes were considered significant if the internal adjusted p-value from DESeq was less than 0.05 and must also pass a 1.5 fold change.
+
+For TCGA data, a BH correction was applied using an FDR 0.001 and genes were considered significant if the p-value < adjusted p-value and must also pass a 1.5 fold change. 
+
+# Intersections 
+
+```{r,  echo = FALSE, message=F, warning=F}
+homotab = read.csv("table2.csv", header = TRUE)
+library(DT)
+datatable(homotab)
+```
+
+# Venns
+
+
+
+![](Image2.tif)
+
+![](Presentation1.tif)
+
+
